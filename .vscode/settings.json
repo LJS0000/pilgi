@@ -1,3 +1,8 @@
 {
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "prettier.requireConfig": true,
   "cSpell.ignoreWords": ["PILGI"]
 }
