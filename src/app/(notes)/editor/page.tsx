@@ -1,11 +1,13 @@
-import Canvas from '@components/canvas/Canvas'
-import Toolbar from '@components/canvas/Toolbar'
+import Canvas from '@components/feature/canvas/Canvas';
+import Toolbar from '@components/feature/canvas/Toolbar';
 
-export default function NoteEditorPage() {
+const EditorPage = () => {
   return (
     <div>
       <Toolbar />
       <Canvas />
     </div>
-  )
-}
+  );
+};
+
+export default EditorPage;
