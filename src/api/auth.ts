@@ -1,6 +1,5 @@
 import { signInWithPopup, signOut, onAuthStateChanged, User } from 'firebase/auth';
 import { auth, googleProvider, githubProvider } from '@services/firebase';
-import { queryClient } from '@services/queryClient';
 
 export const loginWithGoogle = async () => {
   try {
@@ -34,7 +33,6 @@ export const getCurrentUser = async (): Promise<User | null> => {
 export const logout = async () => {
   try {
     await signOut(auth);
-    queryClient.removeQueries({ queryKey: ['currentUser'] });
   } catch (err) {
     console.error('로그아웃 실패:', err);
   }

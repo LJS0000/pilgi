@@ -1,18 +1,21 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import Button from '@components/ui/Button';
-import { logout } from '@api/auth';
+import { Button } from '@components/ui';
+import { useLogout } from '@hooks/useAuth';
 
 const LogoutButton = () => {
   const router = useRouter();
+
+  const { mutateAsync: logout } = useLogout();
 
   const handleLogout = async () => {
     try {
       await logout();
       router.push('/login');
-    } catch (error) {
-      console.error('로그아웃 실패:', error);
+    } catch (err) {
+      // TODO: 에러 핸들링
+      console.error('로그아웃 실패:', err);
     }
   };
 

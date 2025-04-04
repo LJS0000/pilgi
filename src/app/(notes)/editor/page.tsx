@@ -1,5 +1,5 @@
-import Canvas from '@components/feature/canvas/Canvas';
-import Toolbar from '@components/feature/canvas/Toolbar';
+import { Canvas } from '@components/feature';
+import { Toolbar } from '@components/feature';
 
 const EditorPage = () => {
   return (

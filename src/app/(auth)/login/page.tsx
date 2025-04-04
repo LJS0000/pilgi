@@ -2,18 +2,22 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import Button from '@components/ui/Button';
-import { useCurrentUser } from '@hooks/useCurrentUser';
-import { loginWithGoogle, loginWithGithub } from '@api/auth';
+import { Button } from '@components/ui';
+import { useCurrentUser } from '@hooks/useAuth';
+import { useGoogleLogin, useGithubLogin } from '@hooks/useAuth';
 
 const LoginPage = () => {
   const router = useRouter();
+
   const { data: user } = useCurrentUser();
+  const { mutateAsync: googleLogin } = useGoogleLogin();
+  const { mutateAsync: githubLogin } = useGithubLogin();
 
   const handleLogin = async (provider: 'google' | 'github') => {
     try {
-      await (provider === 'google' ? loginWithGoogle() : loginWithGithub());
-      router.push('/');
+      if (provider === 'google') await googleLogin();
+      if (provider === 'github') await githubLogin();
+      router.replace('/');
     } catch (err) {
       // TODO: 에러 핸들링
       console.error('로그인 실패:', err);

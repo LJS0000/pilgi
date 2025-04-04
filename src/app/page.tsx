@@ -1,7 +1,7 @@
 'use client';
 
-import LogoutButton from '@components/feature/auth/LogoutButton';
-import { useCurrentUser } from '@hooks/useCurrentUser';
+import { LogoutButton } from '@components/feature';
+import { useCurrentUser } from '@hooks/useAuth';
 
 const HomePage = () => {
   const { data: user } = useCurrentUser();
