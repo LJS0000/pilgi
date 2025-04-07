@@ -1,6 +1,14 @@
 import type { Metadata } from 'next';
+import localFont from 'next/font/local';
 import ReactQueryProvider from './provider';
 import '@styles/globals.css';
+
+const pretendard = localFont({
+  src: '../../public/fonts/PretendardVariable.woff2',
+  variable: '--font-pretendard',
+  weight: '100 900',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: '필기 PILGI',
@@ -13,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
-      <body>
+    <html lang="ko" className={pretendard.variable}>
+      <body className="font-pretendard antialiased">
         <ReactQueryProvider>{children}</ReactQueryProvider>
       </body>
     </html>

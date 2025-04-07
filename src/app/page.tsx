@@ -10,6 +10,7 @@ const HomePage = () => {
 
   return (
     <div>
+      <h1 className="bg-yellow-200 text-red-500 p-10 font-bold">Home Page</h1>
       <LogoutButton />
     </div>
   );
