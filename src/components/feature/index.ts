@@ -7,4 +7,4 @@ export { default as Canvas } from './canvas/Canvas';
 export { default as Toolbar } from './canvas/Toolbar';
 
 // layout
-export { default as Header } from './layout/Header';
+export { default as AppSidebar } from './layout/AppSidebar';

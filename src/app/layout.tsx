@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import ReactQueryProvider from './provider';
 import './globals.css';
-import { Header } from '@components/feature';
+import { AppSidebar } from '@components/feature';
 
 const pretendard = localFont({
   src: '../../public/fonts/PretendardVariable.woff2',
@@ -19,10 +19,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" className={pretendard.variable}>
-      <body className="antialiased font-pretendard">
+      <body className="grid h-screen grid-cols-[16rem_1fr] antialiased font-pretendard text-primary ">
         <ReactQueryProvider>
-          <Header />
-          <main>{children}</main>
+          <AppSidebar />
+          <main className="bg-page">{children}</main>
         </ReactQueryProvider>
       </body>
     </html>
