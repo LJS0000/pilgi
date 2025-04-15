@@ -1,9 +1,11 @@
 @import 'tailwindcss';
 
-:root {
-  --bg-page: #f9fae9;
-  --text-primary: #202020;
-  --text-secondary: #606060;
+@theme {
+  --font-display: 'Pretendard', 'system-ui', sans-serif;
+
+  --color-page: #f9fae9;
+  --color-text: #202020;
+  --color-secondary: #606060;
   --color-primary: #0091ff;
   --color-warning: #ffc700;
 }

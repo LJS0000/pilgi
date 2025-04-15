@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" className={pretendard.variable}>
-      <body className="grid h-screen grid-cols-[16rem_1fr] antialiased font-pretendard text-primary ">
+      <body className="grid h-screen grid-cols-[16rem_1fr] antialiased font-display text-text">
         <ReactQueryProvider>
           <AppSidebar />
           <main className="bg-page">{children}</main>
