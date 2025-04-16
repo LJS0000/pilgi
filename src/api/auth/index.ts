@@ -1,13 +1,13 @@
-import { signInWithPopup, signOut, onAuthStateChanged, User } from 'firebase/auth';
+import { signInWithPopup, signOut, onAuthStateChanged, User, AuthError } from 'firebase/auth';
 import { auth, googleProvider, githubProvider } from '@services/firebase';
+import { handleCredentialConflict } from './handleCredentialConflict';
 
 export const loginWithGoogle = async () => {
   try {
     const resp = await signInWithPopup(auth, googleProvider);
     return resp.user;
   } catch (err) {
-    console.error('Google 로그인 실패', err);
-    throw err;
+    return handleCredentialConflict(err as AuthError, auth);
   }
 };
 
@@ -16,8 +16,7 @@ export const loginWithGithub = async () => {
     const resp = await signInWithPopup(auth, githubProvider);
     return resp.user;
   } catch (err) {
-    console.error('GitHub 로그인 실패', err);
-    throw err;
+    return handleCredentialConflict(err as AuthError, auth);
   }
 };
 
@@ -34,6 +33,6 @@ export const logout = async () => {
   try {
     await signOut(auth);
   } catch (err) {
-    console.error('로그아웃 실패:', err);
+    throw err;
   }
 };
