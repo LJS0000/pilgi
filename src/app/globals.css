@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Pretendard', 'system-ui', sans-serif;
+
+  --color-page: #f9fae9;
+  --color-text: #202020;
+  --color-secondary: #606060;
+  --color-primary: #0091ff;
+  --color-warning: #ffc700;
+}

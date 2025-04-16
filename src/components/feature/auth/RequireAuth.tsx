@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
-import { useCurrentUser } from '@hooks/useCurrentUser';
+import { useCurrentUser } from '@hooks/useAuth';
 
 const RequireAuth = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();

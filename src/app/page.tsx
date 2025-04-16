@@ -1,7 +1,6 @@
 'use client';
 
-import LogoutButton from '@components/feature/auth/LogoutButton';
-import { useCurrentUser } from '@hooks/useCurrentUser';
+import { useCurrentUser } from '@hooks/useAuth';
 
 const HomePage = () => {
   const { data: user } = useCurrentUser();
@@ -10,7 +9,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <LogoutButton />
+      <h1>Home</h1>
     </div>
   );
 };
