@@ -1,5 +1,6 @@
 'use client';
 
+import { LogoutButton } from '@components/feature';
 import { useCurrentUser } from '@hooks/useAuth';
 
 const HomePage = () => {
@@ -10,6 +11,7 @@ const HomePage = () => {
   return (
     <div>
       <h1>Home</h1>
+      <LogoutButton />
     </div>
   );
 };
