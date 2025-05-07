@@ -31,7 +31,8 @@ const LoginPage = () => {
 
   return (
     <div>
-      <h1>로그인</h1>
+      <h1>회원가입
+</h1>
       <Button onClick={() => handleLogin('google')}>Google 로그인</Button>
       <Button onClick={() => handleLogin('github')}>GitHub 로그인</Button>
     </div>
