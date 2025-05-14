@@ -19,7 +19,6 @@ const LoginPage = () => {
       if (provider === 'github') await githubLogin();
       router.replace('/');
     } catch (err) {
-      // TODO: 에러 핸들링
       console.error('로그인 실패:', err);
       alert('로그인 실패!');
     }
@@ -31,8 +30,7 @@ const LoginPage = () => {
 
   return (
     <div>
-      <h1>회원가입
-</h1>
+      <h1>회원가입</h1>
       <Button onClick={() => handleLogin('google')}>Google 로그인</Button>
       <Button onClick={() => handleLogin('github')}>GitHub 로그인</Button>
     </div>
