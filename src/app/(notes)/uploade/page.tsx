@@ -1,13 +1,6 @@
-import { Canvas } from '@components/feature';
-import { Toolbar } from '@components/feature';
-
 const EditorPage = () => {
-  return (
-    <div>
-      <Toolbar />
-      <Canvas />
-    </div>
-  );
+  // TODO: 업로드 연결
+  return <div></div>;
 };
 
 export default EditorPage;
