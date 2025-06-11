@@ -1,6 +1,6 @@
 'use client';
 
-import { LogoutButton } from '@components/feature';
+import { AppSidebar, LogoutButton } from '@components/feature';
 import { useCurrentUser } from '@hooks/useAuth';
 
 const HomePage = () => {
@@ -10,6 +10,7 @@ const HomePage = () => {
 
   return (
     <div>
+      <AppSidebar />
       <h1>Home</h1>
       <LogoutButton />
     </div>

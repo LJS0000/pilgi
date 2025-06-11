@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   description: '필기 내용을 바로 클라우드에 업로드 해보세요',
 };
 
+//todo: GA도입
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" className={pretendard.variable}>
